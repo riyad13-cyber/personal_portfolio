@@ -4,14 +4,16 @@
   --color-aside: #f2f3f7;
   --color-btn: #2c98f0;
   --color-hire: #f9c03f;
-  --color-hire: #2c9bf4;
-  --color-hire: #ec5453;
-  --color-hire: #f7c03f;
-  --color-hire: #a84cb7;
-  --color-hire: #2fa599;
-  --color-hire: #4055b2;
+  --color-idea: #2c9bf4;
+  --color-software: #ec5453;
+  --color-application: #f7c03f;
+  --color-graphic: #a84cb7;
+  --color-software2: #2fa599;
+  --color-application2: #4055b2;
   --color-accent: #5d6875;
   --color-main: black;
+  --color-white: white;
+  --color-hero: rgba(0, 0, 0, 0.308);
 }
 
 *,
@@ -29,22 +31,29 @@ body {
 }
 
 body {
-  max-width: 1200px;
-  font-family: var(--font-play);
+  /* max-width: 1200px; */
+  font-family: var(--font-quick);
   font-size: 15px;
-  width: 100%;
+  /* width: 100%; */
   position: relative;
 }
 
-/* aside sytling */
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* aside styling */
 aside {
   width: 300px;
-  background-color: var(--color-aside);
-  font-family: var(--font-quick);
+  min-width: 300px;
+  background: var(--color-aside);
+  height: 100vh;
   position: fixed;
   top: 0;
-  left: 8%;
-  height: 100vh;
+  left: 0;
+  overflow-y: auto;
 }
 
 .pro__img img {
@@ -75,7 +84,8 @@ aside {
   margin-top: 0.5rem;
 }
 
-.pro__des h4 a {
+.pro__des h4 a,
+.hero__body p a {
   text-decoration: none;
   color: var(--color-btn);
 }
@@ -147,4 +157,152 @@ aside {
 
 .fot__icon a {
   font-size: 1rem;
+}
+
+/* main styling */
+main {
+  margin-left: 300px; /* same as aside width */
+  width: calc(100% - 300px);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.container {
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* hero styling */
+.hero {
+  background-image: url(./images/pexels-jplenio-1105379.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 0;
+  /* gap: 1.5rem; */
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-hero);
+  z-index: 1;
+}
+.hero__body {
+  width: 60%;
+  margin-left: 1rem;
+  z-index: 2;
+}
+.hero__body h1 {
+  font-family: var(--font-play);
+  font-size: 3rem;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.hero__body p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+  font-family: var(--font-quick);
+}
+
+input[type="button"] {
+  padding: 0.5rem 0.8rem;
+  background: #2fa59900;
+  border: 1px solid var(--color-white);
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* about section sytling */
+
+.about {
+  padding: 10rem 1rem;
+}
+
+.about h6,
+.about h3 {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  padding-bottom: 1rem;
+  letter-spacing: 7px;
+}
+
+.about h3 {
+  font-size: 2rem;
+  padding-bottom: 3rem;
+  color: var(--color-main);
+  font-family: var(--font-play);
+  font-weight: 400;
+}
+
+.about p {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  color: var(--color-accent);
+  padding-bottom: 2rem;
+}
+.about p:last-child {
+  padding-bottom: 0;
+}
+
+/* service grid sytling */
+
+.service__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.grid__body {
+  padding: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 4px rgba(166, 159, 159, 0.75);
+  -webkit-box-shadow: 0px 0px 10px 4px rgba(166, 159, 159, 0.75);
+  -moz-box-shadow: 0px 0px 10px 4px rgba(166, 159, 159, 0.75);
+  height: 150px;
+}
+.grid__body i {
+  padding-bottom: 1.5rem;
+}
+
+.grid__body:nth-child(1) {
+  border-bottom: 2px solid var(--color-idea);
+}
+.grid__body:nth-child(2) {
+  border-bottom: 2px solid var(--color-software);
+}
+.grid__body:nth-child(3) {
+  border-bottom: 2px solid var(--color-application);
+}
+.grid__body:last-child {
+  border-bottom: 2px solid var(--color-graphic);
+}
+
+.grid__body:nth-child(1) i {
+  color: var(--color-idea);
+}
+.grid__body:nth-child(2) i {
+  color: var(--color-software);
+}
+.grid__body:nth-child(3) i {
+  color: var(--color-application);
+}
+.grid__body:last-child i {
+  color: var(--color-graphic);
 }
