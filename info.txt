@@ -1,0 +1,8 @@
+<div class="hero__body">
+              <h1>Hi, I’m Riyad <br />Frontend Developer & UI Enthusiast</h1>
+              <p>
+                a <a href="">frontend developer</a> focused on building smooth,
+                responsive, and visually balanced interfaces.
+              </p>
+              <input type="button" value="VIEW PORTFOLIO" />
+            </div>
