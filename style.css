@@ -246,7 +246,9 @@ input[type="button"] {
 .skills h6,
 .skills h3,
 .experieces h6,
-.experieces h3 {
+.experieces h3,
+.recent__work h6,
+.recent__work h3 {
   color: var(--color-accent);
   text-transform: uppercase;
   font-size: 0.6rem;
@@ -257,7 +259,8 @@ input[type="button"] {
 .about h3,
 .services h3,
 .skills h3,
-.experieces h3 {
+.experieces h3,
+.recent__work h3 {
   font-size: 2rem;
   padding-bottom: 3rem;
   color: var(--color-main);
@@ -568,4 +571,118 @@ input[type="button"] {
 .exp__des p {
   line-height: 1.5rem;
   color: var(--color-accent);
+}
+
+/* recent work styling */
+
+.recent__work {
+  margin-left: 1rem;
+}
+
+.recent__catalog {
+  padding-bottom: 3rem;
+}
+.recent__catalog a {
+  padding-right: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: var(--font-quick);
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: all 200ms ease;
+}
+.recent__catalog a:first-child {
+  color: var(--color-btn);
+}
+.recent__catalog a:last-child {
+  padding-right: 0;
+}
+
+/* work body styling */
+
+.recent__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.work__body {
+  height: 380px;
+  width: 425px;
+  color: var(--color-white);
+  padding: 1.5rem;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.work__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+.work__title,
+.work__footer {
+  z-index: 2;
+  position: absolute;
+  display: none;
+}
+.work__title h4 {
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+}
+.work__title a {
+  text-decoration: none;
+}
+
+.work__footer span {
+  background-color: var(--color-aside);
+  color: var(--color-accent);
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.work__body:first-child {
+  background-image: url(./images/cat1.png);
+}
+.work__body:nth-child(2) {
+  background-image: url(./images/cat2.png);
+}
+.work__body:nth-child(3) {
+  background-image: url(./images/cat3.png);
+}
+.work__body:nth-child(4) {
+  background-image: url(./images/cat4.png);
+}
+.work__body:nth-child(5) {
+  background-image: url(./images/cat5.png);
+}
+.work__body:last-child {
+  background-image: url(./images/cat6.png);
+}
+
+.work__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-btn);
+  z-index: 1;
+  display: none;
+  transition: all 0.3s ease;
+}
+.work__body:hover::after {
+  display: block;
+}
+
+.work__body:hover .work__title,
+.work__body:hover .work__footer {
+  display: block;
 }
