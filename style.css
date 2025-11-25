@@ -35,7 +35,9 @@ html,
 body {
   height: 100%;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   /* max-width: 1200px; */
   font-family: var(--font-quick);
@@ -248,7 +250,11 @@ input[type="button"] {
 .experieces h6,
 .experieces h3,
 .recent__work h6,
-.recent__work h3 {
+.recent__work h3,
+.blog h6,
+.blog h3,
+.get__in h6,
+.get__in h3 {
   color: var(--color-accent);
   text-transform: uppercase;
   font-size: 0.6rem;
@@ -260,7 +266,9 @@ input[type="button"] {
 .services h3,
 .skills h3,
 .experieces h3,
-.recent__work h3 {
+.recent__work h3,
+.blog h3,
+.get__in h3 {
   font-size: 2rem;
   padding-bottom: 3rem;
   color: var(--color-main);
@@ -615,7 +623,7 @@ input[type="button"] {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
-  transition: all 300ms ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 .work__footer {
@@ -630,7 +638,8 @@ input[type="button"] {
 .work__footer {
   z-index: 2;
   position: absolute;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 .work__title h4 {
   font-size: 1.3rem;
@@ -669,20 +678,153 @@ input[type="button"] {
 .work__body::after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background-color: var(--color-btn);
   z-index: 1;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.3s ease;
 }
 .work__body:hover::after {
-  display: block;
+  opacity: 0.9;
+  visibility: visible;
 }
 
 .work__body:hover .work__title,
 .work__body:hover .work__footer {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* blog styling start here */
+.blog {
+  margin: 10rem 1rem;
+}
+.grid__blog {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.blog__body {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.blog__img {
+  width: 100%;
+  overflow: hidden;
+}
+.blog__img img {
+  width: 100%;
+  transition: transform 250ms ease;
+}
+.blog__img img:hover {
+  transform: scale(1.1);
+}
+
+.blog__header {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 400;
+}
+.blog__title h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  font-family: var(--font-quick);
+}
+.blog__post {
+  color: var(--color-accent);
+}
+
+.load__more {
+  margin-top: 5rem;
+  width: 100%;
+  background-color: var(--color-btn);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white;
+}
+.load__more a {
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+/* get in styling */
+.get__in {
+  margin-bottom: 2rem;
+  margin-inline: 1rem;
+}
+
+.get__in__main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.get__left__body {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.left__email a,
+.left__email p {
+  color: var(--color-accent);
+  font-size: 1rem;
+  text-decoration: none;
+}
+.left__icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.left__icon i {
+  font-size: 1.5rem;
+  color: var(--color-btn);
+}
+.get__in__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.get__in__right input,
+.get__in__right textarea {
+  width: 25rem;
+  border: none;
+  background-color: var(--color-aside);
+  padding: 0.8rem;
+}
+.get__in__right input:focus,
+.get__in__right textarea:focus {
+  outline: 1px solid var(--color-btn);
+}
+.get__in__right input::placeholder,
+.get__in__right textarea::placeholder {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-family: var(--font-quick);
+}
+.get__in__right button {
+  width: 50%;
+  border: none;
+  background-color: var(--color-btn);
+  padding: 0.8rem 1.2rem;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
 }
